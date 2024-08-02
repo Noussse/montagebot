@@ -3,12 +3,12 @@ from moviepy.video.fx.all import resize,crop,headblur
 from bluredvideo import blur_video
 import pysrt
 #input and output
-originalvideo=r"C:\Users\nouss\OneDrive\Bureau\2024-08-01 14-05-55 - Trim.mkv"
-resultplacment=r"C:\Users\nouss\OneDrive\Bureau\test1.mp4"
+originalvideo=r"original video here"
+resultplacment=r"result placement here"
 clip = VideoFileClip(originalvideo)
 #bluring the video
-blur_video(originalvideo,r"C:\Users\nouss\OneDrive\Bureau\blurredvid.mp4")
-blurredclip=VideoFileClip(r"C:\Users\nouss\OneDrive\Bureau\blurredvid.mp4")
+blur_video(originalvideo,r"blurredvideo.mp4")
+blurredclip=VideoFileClip(r"blurredvideo.mp4")
 #resizing and placing the blured video
 resizedblurredclip=blurredclip.resize(width=3000)
 blurposition=resizedblurredclip.set_position(("center","bottom"))

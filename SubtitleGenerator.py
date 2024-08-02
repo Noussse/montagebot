@@ -7,7 +7,7 @@ def subtitle(video_file_path,output_path):
     audio = video.audio
     audio.write_audiofile(audio_file_path)
     #setting everything up
-    aai.settings.api_key = "ea50099c36374406ad9f8ae76851f3e0"
+    aai.settings.api_key = "assemblyai key here"
     transcriber = aai.Transcriber()
 
     # Request transcription with timestamps
