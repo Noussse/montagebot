@@ -8,7 +8,8 @@ Main Video Settings: You can choose from three settings for the main video in th
 Fully filling the space
 Partially filling the space with blurry background
 Normal resolution with a blurry background
-## Subtitle Generation: The program provides two versions of the edited short:
+## Subtitle Generation: 
+The program provides two versions of the edited short:
 * A normal edited short
 A short with subtitles
 Subtitles are generated using AssemblyAI, with a limit of three words on screen at a time.
