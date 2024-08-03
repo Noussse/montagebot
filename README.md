@@ -15,6 +15,7 @@ Subtitles are generated using AssemblyAI, with a limit of three words on screen 
 
 ## How to Use
 * Setup:
+* make sure you download the moviepy,assemblyai,pysrt and opencv librarys
 Fill in the video placement and output placement in the finalcut.py file.
 Insert your AssemblyAI key in the subtitle_generator.py file.
 * Start:
