@@ -11,7 +11,8 @@ Short Machine is designed to edit short videos. This bot was primarily used with
 
 **after**
 
-![Screenshot 2024-08-07 135534](https://github.com/user-attachments/assets/f592a75b-8713-4c60-9349-1c5ada84b9ab)
+![video after montage](https://github.com/user-attachments/assets/d4b6d7a9-0984-47fc-9845-3ed5ec1a865a)
+
 
 
 
