@@ -5,13 +5,8 @@ A program that edits normal videos (camera and gameplay reaction, work, etc.) in
 Short Machine is designed to edit short videos. This bot was primarily used with CaseOh videos, giving you a rough idea of the camera placement and content format.
 
 ## example:
-**before**
 
-![video before editing](https://github.com/user-attachments/assets/53a2adf2-72d1-4623-be62-9bc8d6abd3cb)
-
-**after**
-
-![video after montage](https://github.com/user-attachments/assets/d4b6d7a9-0984-47fc-9845-3ed5ec1a865a)
+![Untitled](https://github.com/user-attachments/assets/6206241c-33ad-41eb-9201-b6b7eaa51dbf)
 
 
 
