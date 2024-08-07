@@ -1,10 +1,28 @@
-import moviepy.editor as mp
+import assemblyai as aai
+from moviepy.editor import VideoFileClip,TextClip
 import pysrt
-from SubtitleGenerator import subtitle
-from shortmachine import shortproduction
-def srt_to_subtitles(srt_file):
-    subs = pysrt.open(srt_file)
-    subtitle_clips = []
+def subtitle(video_file_path,output_path):
+    #from mkv to mp3
+    audio_file_path="audiofile.mp3"
+    video = VideoFileClip(video_file_path)
+    audio = video.audio
+    audio.write_audiofile(audio_file_path)
+    #setting everything up
+    aai.settings.api_key = "put your assemblyai api key here"
+    transcriber = aai.Transcriber()
+
+    # Request transcription with timestamps
+    transcript = transcriber.transcribe(audio_file_path)
+
+    if transcript.status == 'failed':
+        raise Exception("Transcription failed")
+    # Save the transcription result
+    transcription_result = transcript.export_subtitles_srt()
+
+    #generate srt
+    with open(output_path, 'w') as f:
+        f.write( transcription_result)
+
 
 def srt_to_subtitles(srt_file):
     subs = pysrt.open(srt_file)
@@ -23,24 +41,9 @@ def srt_to_subtitles(srt_file):
         for i in range(0, len(words), 3):
             chunk = ' '.join(words[i:i+3])
             # Create a subtitle clip for each chunk
-            txt_clip = mp.TextClip(chunk, fontsize=105, color='#FBDD00', font='Arial-Bold',stroke_color='black', stroke_width=2)
+            txt_clip = TextClip(chunk, fontsize=105, color='#FBDD00', font='Arial-Bold',stroke_color='black', stroke_width=2)
             txt_clip = txt_clip.set_position(('center', 600)).set_start(start).set_duration(chunk_duration)
             subtitle_clips.append(txt_clip)
             start += chunk_duration  # Move the start time forward for the next chunk
 
     return subtitle_clips
-
-def add_subtitles_to_video(video_file, srt_file, output_file):
-    video = mp.VideoFileClip(video_file)
-    subtitles = srt_to_subtitles(srt_file)
-    final_video = mp.CompositeVideoClip([video] + subtitles)
-    final_video.write_videofile(output_file, codec='libx264')
-
-video_file = r""
-resultplacement=r""
-shortproduction(video_file,resultplacement)
-subtitle(resultplacement,"text.srt")
-srt_file = 'text.srt'
-output_file = r""
-
-add_subtitles_to_video(resultplacement, srt_file, output_file)
