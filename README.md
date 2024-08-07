@@ -6,8 +6,11 @@ Short Machine is designed to edit short videos. This bot was primarily used with
 
 ## example:
 **before**
+
 ![video before editing](https://github.com/user-attachments/assets/53a2adf2-72d1-4623-be62-9bc8d6abd3cb)
+
 **after**
+
 ![video after editing](https://github.com/user-attachments/assets/5bef64b3-f501-4cf6-a87b-371dc92f9134)
 
 
